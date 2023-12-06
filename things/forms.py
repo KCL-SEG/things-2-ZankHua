@@ -8,6 +8,8 @@ class ThingForm(forms.ModelForm):
         model = Thing
         fields = ['name', 'description', 'quantity']
         widgets = {
-            'description': forms.Textarea(),
-            'quantity': forms.NumberInput()
+            'description': forms.Textarea(attrs={'maxlength': 120}),
+            'quantity': forms.NumberInput(),
+            'name': forms.TextInput(attrs={'maxlength': 35})
         }
+
